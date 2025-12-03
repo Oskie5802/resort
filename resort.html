@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort nad morzem</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sea-blue': '#0e7490', 
+                        'sand': '#f5f5f0',     
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hover-zoom {
+            transition: transform 0.5s ease;
+        }
+        .hover-zoom:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-sand antialiased">
+
+    <!-- NAWIGACJA -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-anchor text-sea-blue text-2xl"></i>
+                    <span class="font-serif text-2xl font-bold text-gray-800 tracking-wider">Resort nad morzem</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#o-nas" class="text-gray-600 hover:text-sea-blue transition duration-300 uppercase text-sm tracking-widest font-semibold">O nas</a>
+                    <a href="#galeria" class="text-gray-600 hover:text-sea-blue transition duration-300 uppercase text-sm tracking-widest font-semibold">Galeria</a>
+                    <a href="#udogodnienia" class="text-gray-600 hover:text-sea-blue transition duration-300 uppercase text-sm tracking-widest font-semibold">Atrakcje</a>
+                    <a href="#kontakt" class="px-6 py-2 bg-sea-blue text-white rounded-full hover:bg-cyan-800 transition duration-300 text-sm font-semibold shadow-lg">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER Z WIDEO W TLE -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+
+            <video autoplay muted loop playsinline id="bg-video" class="w-full h-full object-cover">
+
+                <source src="https://videos.pexels.com/video-files/1409899/1409899-hd_1920_1080_25fps.mp4" type="video/mp4">
+                Twoja przeglądarka nie obsługuje tagu video.
+            </video>
+            
+
+            <div class="absolute inset-0 bg-black/40"></div> 
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto mt-16">
+            <p class="text-lg md:text-xl uppercase tracking-[0.3em] mb-4 opacity-90 drop-shadow-md">Luksus • Natura • Spokój</p>
+            <h1 class="font-serif text-5xl md:text-7xl mb-6 leading-tight drop-shadow-lg">Odpocznij tam, gdzie szumi morze</h1>
+            <p class="text-lg md:text-xl mb-10 font-light opacity-95 max-w-2xl mx-auto drop-shadow-md">
+                Zapraszamy do wyjątkowego miejsca z widokiem na Bałtyk. Z dala od zgiełku, blisko natury.
+            </p>
+            <a href="#kontakt" class="inline-block border-2 border-white px-8 py-3 text-white hover:bg-white hover:text-gray-900 transition duration-300 uppercase tracking-widest text-sm font-semibold backdrop-blur-[2px]">
+                Skontaktuj się z nami
+            </a>
+        </div>
+    </header>
+
+    <section id="o-nas" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wnętrze pokoju" class="rounded-lg shadow-2xl w-full h-[500px] object-cover">
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="font-serif text-4xl text-gray-800 mb-6">Witaj w Resorcie nad morzem</h2>
+                    <div class="w-20 h-1 bg-sea-blue mb-8"></div>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Stworzyliśmy to miejsce z myślą o osobach szukających prawdziwego wytchnienia. Nasz resort to kameralny obiekt położony zaledwie 50 metrów od zejścia na plażę.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Oferujemy przestronne apartamenty urządzone w stylu marynistycznym, lokalną kuchnię opartą na świeżych rybach oraz strefę relaksu w naszym ogrodzie. Tutaj czas płynie wolniej.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-water text-sea-blue text-xl"></i>
+                            <span class="text-sm font-semibold uppercase tracking-wide">Widok na morze</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-leaf text-sea-blue text-xl"></i>
+                            <span class="text-sm font-semibold uppercase tracking-wide">Blisko natury</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="udogodnienia" class="py-20 bg-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-serif text-3xl md:text-4xl text-gray-800 mb-16">Co na Ciebie czeka?</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <i class="fa-solid fa-umbrella-beach text-4xl text-sea-blue mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Prywatna Plaża</h3>
+                    <p class="text-sm text-gray-500">Bezpośredni dostęp do morza.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <i class="fa-solid fa-wifi text-4xl text-sea-blue mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Szybkie Wi-Fi</h3>
+                    <p class="text-sm text-gray-500">Pracuj zdalnie lub oglądaj filmy.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <i class="fa-solid fa-mug-hot text-4xl text-sea-blue mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Śniadania</h3>
+                    <p class="text-sm text-gray-500">Pyszne, lokalne produkty.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+                    <i class="fa-solid fa-square-parking text-4xl text-sea-blue mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Parking</h3>
+                    <p class="text-sm text-gray-500">Bezpieczny parking dla gości.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl text-gray-800">Nasze Wnętrza i Okolica</h2>
+                <p class="text-gray-500 mt-4">Zobacz, jak wygląda wypoczynek u nas</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2 overflow-hidden rounded-lg h-64 md:h-80">
+                    <img src="https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lobby" class="w-full h-full object-cover hover-zoom cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64 md:h-80">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pokój" class="w-full h-full object-cover hover-zoom cursor-pointer">
+                </div>
+                <div class="overflow-hidden rounded-lg h-64 md:h-80">
+                    <img src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plaża" class="w-full h-full object-cover hover-zoom cursor-pointer">
+                </div>
+                <div class="md:col-span-2 overflow-hidden rounded-lg h-64 md:h-80">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Relaks" class="w-full h-full object-cover hover-zoom cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div>
+                    <h2 class="font-serif text-3xl mb-6">Skontaktuj się z nami</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Chcesz zapytać o wolny termin lub dowiedzieć się więcej o naszej ofercie? Zadzwoń lub napisz. Nie prowadzimy rezerwacji online, bo cenimy bezpośredni kontakt z Gościem.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-sea-blue flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-widest">Zadzwoń do nas</p>
+                                <p class="text-xl font-semibold mt-1">+48 123 456 789</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-sea-blue flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-widest">Napisz maila</p>
+                                <p class="text-xl font-semibold mt-1">kontakt@Resortnadmorzem.pl</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-sea-blue flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 uppercase tracking-widest">Adres</p>
+                                <p class="text-xl font-semibold mt-1">ul. Nadmorska 15, 80-000 Hel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl h-80 md:h-auto relative group">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mapa tło" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <a href="https://maps.google.com" target="_blank" class="px-6 py-3 bg-white text-gray-900 font-semibold rounded-full shadow-lg hover:scale-105 transition transform">
+                            Zobacz na mapie <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 Resort nad morzem. Wszystkie prawa zastrzeżone. <br>
+                Projekt i realizacja: Oskar Minor.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SKRYPT DO SPOWOLNIENIA WIDEO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('bg-video');
+            if(video) {
+                video.playbackRate = 0.6;
+            }
+        });
+    </script>
+
+</body>
+</html>
